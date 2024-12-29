@@ -134,7 +134,16 @@
     <ClCompile Include="PlaneSimulator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="default.fs" />
+    <None Include="default.vs" />
     <None Include="packages.config" />
+    <None Include="ShadowMapping.fs" />
+    <None Include="ShadowMapping.vs" />
+    <None Include="ShadowMappingDepth.fs" />
+    <None Include="ShadowMappingDepth.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

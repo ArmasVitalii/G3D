@@ -21,5 +21,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="default.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="default.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ShadowMapping.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ShadowMapping.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ShadowMappingDepth.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ShadowMappingDepth.vs">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
