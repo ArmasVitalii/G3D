@@ -13,7 +13,8 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-!packages
+!PlaneSimulator/packages
+!PlaneSimulator/x64
 !_external
 
 # Mono auto generated files
