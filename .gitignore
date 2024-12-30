@@ -14,7 +14,8 @@
 *.userprefs
 
 # Ensure _external and its contents are included
-!_external/
+!_external/**/bin/
+!_external/**/lib/
 
 # Mono auto generated files
 mono_crash.*
