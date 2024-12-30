@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Ensure _external and its contents are included
+!_external/
+!_external/**
+
 # User-specific files
 *.rsuser
 *.suo
@@ -12,10 +16,6 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
-# Ensure _external and its contents are included
-!_external/
-!_external/**
 
 # Mono auto generated files
 mono_crash.*
