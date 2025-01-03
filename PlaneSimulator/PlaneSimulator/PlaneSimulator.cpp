@@ -287,7 +287,155 @@ public:
 
 		UpdateCameraVectors();
 	}
+
+	void ProcessMouseScroll(float yOffset)
+	{
+		if (FoVy >= 1.0f && FoVy <= 90.0f) {
+			FoVy -= yOffset;
+		}
+		if (FoVy <= 1.0f)
+			FoVy = 1.0f;
+		if (FoVy >= 90.0f)
+			FoVy = 90.0f;
+	}
+
+	glm::vec3 GetForward() const
+	{
+		return forward;
+	}
+
+	glm::vec3 GetUp() const { return up; }
+
+
+	void StartFlying() {
+		isFlying = true;
+		grounded = false;
+	}
+
+
+	void UpdateFlight(float deltaTime) {
+		if (isFlying) {
+			speed += acceleration * deltaTime;
+			if (speed > maxSpeed) speed = maxSpeed;
+
+			// Modifică pitch-ul pentru a "ridica botul"
+			pitch += pitchIncrement * deltaTime;
+			if (pitch > 20.0f) pitch = 20.0f; // Limităm pitch-ul la 20 de grade pentru decolare
+			glm::vec3 newPosition = position + forward * GetSpeed() * deltaTime * 10.0f;
+
+			// Verifică dacă noua poziție este sub înălțimea minimă permisă
+			if (newPosition.y < -20.0f) {
+				newPosition.y = 0.0F; // Asigură-te că camera nu coboară sub plan
+			}
+
+
+
+			position = newPosition;
+		}
+	}
+	void SetGrounded(bool g) {
+		grounded = g;
+		if (g) {
+			pitch = 0.0f;
+			roll = 0.0f;
+			speed = 0.0f;
+		}
+	}
+
+	bool IsGrounded() const { return grounded; }
+
+	void StopFlying() {
+		isFlying = false;
+		//speed = 0.0f;
+	}
+
+	//float GetSpeed() const { return speed; }
+	bool IsFlying() const { return isFlying; }
+
+	private:
+		void ProcessMouseMovement(float xOffset, float yOffset, bool constrainPitch = true)
+		{
+			yaw += xOffset;
+			pitch += yOffset;
+
+			// Avem grijã sã nu ne dãm peste cap
+			if (constrainPitch) {
+				if (pitch > 89.0f)
+					pitch = 89.0f;
+				if (pitch < -89.0f)
+					pitch = -89.0f;
+			}
+
+			if (yaw > MAX_YAW)
+				yaw = MAX_YAW;
+			if (yaw < MIN_YAW)
+				yaw = MIN_YAW;
+
+			// Se modificã vectorii camerei pe baza unghiurilor Euler
+			UpdateCameraVectors();
+		}
+
+		void UpdateCameraVectors() {
+			// Calculate the new forward vector
+			this->forward.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+			this->forward.y = sin(glm::radians(pitch));
+			this->forward.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+			this->forward = glm::normalize(this->forward);
+
+			// Calculate new Right and Up vectors
+			this->right = glm::normalize(glm::cross(forward, worldUp));  // Adjust right vector
+			this->up = glm::normalize(glm::cross(right, forward));  // Recompute up vector
+
+			// Apply roll rotation around the forward axis if needed
+			glm::mat4 rollMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(roll), forward);
+			this->right = glm::normalize(glm::vec3(rollMatrix * glm::vec4(this->right, 0.0f)));
+			this->up = glm::normalize(glm::cross(right, forward));
+		}
+
+		protected:
+			const float cameraSpeedFactor = 2.5f;
+			//const float cameraSpeedFactor = 1.5f;
+			const float mouseSensitivity = 0.1f;
+
+			// Perspective properties
+			float zNear;
+			float zFar;
+			float FoVy;
+			int width;
+			int height;
+			bool isPerspective;
+			float roll = 0.0f;  // Roll angle in degrees
+			float speed = 0.01f;       // Viteza curentă a avionului
+			float acceleration = 0.1f; // Accelerarea avionului
+			float maxSpeed = 10.0f;     // Viteza maximă
+			float minSpeed = 0.0f;     // Viteza minimă, poate fi zero pentru a opri complet
+			bool isFlying = false;
+			bool grounded = true;// Dacă avionul este în aer sau nu
+			float pitchIncrement = 0.1f;
+
+			glm::vec3 position;
+			glm::vec3 forward;
+			glm::vec3 right;
+			glm::vec3 up;
+			glm::vec3 worldUp;
+
+			// Euler Angles
+			float yaw;
+			float pitch;
+
+			bool bFirstMouseMove = true;
+			float lastX = 0.f, lastY = 0.f;
 };
+
+GLuint ProjMatrixLocation, ViewMatrixLocation, WorldMatrixLocation;
+Camera* pCamera = nullptr;
+
+void Cleanup()
+{
+	delete pCamera;
+}
+
+
 int main() {
 
 
