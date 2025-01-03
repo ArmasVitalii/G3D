@@ -187,6 +187,69 @@ public:
 		}
 		return Proj;
 	}
+
+	void ProcessKeyboard(ECameraMovementType direction, float deltaTime)
+	{
+		float rotationSpeed = 45.0f * deltaTime;  // Rotation speed factor
+		float movementSpeed = 10.0f * deltaTime;  //
+
+		if (grounded) {
+			switch (direction) {
+			case FORWARD:
+				Accelerate(deltaTime);
+				position += forward * GetSpeed() * deltaTime * 10.0f;
+				break;
+			case BACKWARD:
+				Decelerate(deltaTime);
+				position -= forward * GetSpeed() * deltaTime * 10.0f;
+				break;
+			default:
+				break;
+			}
+		}
+		else {
+			switch (direction) {
+			case FORWARD:
+				Accelerate(deltaTime);
+				position += forward * GetSpeed() * deltaTime * 10.0f;
+				break;
+			case BACKWARD:
+				Decelerate(deltaTime);
+				position -= forward * GetSpeed() * deltaTime * 10.0f;
+				break;
+			case LEFT:
+				yaw -= rotationSpeed;  // Rotate left
+				break;
+			case RIGHT:
+				yaw += rotationSpeed;  // Rotate right
+				break;
+			case UP:
+				pitch += rotationSpeed; // Pitch up
+				break;
+			case DOWN:
+				pitch -= rotationSpeed; // Pitch down
+				break;
+			case ROLL_LEFT:
+				roll += rotationSpeed;  // Roll left
+				break;
+			case ROLL_RIGHT:
+				roll -= rotationSpeed;  // Roll right
+				break;
+			default:
+				break;
+			}
+			if (pitch > 89.0f)
+				pitch = 89.0f;
+			if (pitch < -89.0f)
+				pitch = -89.0f;
+			if (yaw > MAX_YAW)
+				yaw = MAX_YAW;
+			if (yaw < MIN_YAW)
+				yaw = MIN_YAW;
+			UpdateCameraVectors();
+			position += forward * GetSpeed() * deltaTime * 10.0f;
+		}
+	}
 };
 int main() {
 
