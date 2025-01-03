@@ -250,6 +250,43 @@ public:
 			position += forward * GetSpeed() * deltaTime * 10.0f;
 		}
 	}
+
+	void MouseControl(float xPos, float yPos)
+	{
+		if (bFirstMouseMove) {
+			lastX = xPos;
+			lastY = yPos;
+			bFirstMouseMove = false;
+		}
+
+		float xChange = xPos - lastX;
+		float yChange = lastY - yPos;
+		lastX = xPos;
+		lastY = yPos;
+
+		if (fabs(xChange) <= 1e-6 && fabs(yChange) <= 1e-6) {
+			return;
+		}
+		xChange *= mouseSensitivity;
+		yChange *= mouseSensitivity;
+
+		if (!grounded)
+		{
+			yaw += xChange;
+			pitch += yChange;
+		}
+
+		if (pitch > 89.0f)
+			pitch = 89.0f;
+		if (pitch < -89.0f)
+			pitch = -89.0f;
+		if (yaw > MAX_YAW)
+			yaw = MAX_YAW;
+		if (yaw < MIN_YAW)
+			yaw = MIN_YAW;
+
+		UpdateCameraVectors();
+	}
 };
 int main() {
 
