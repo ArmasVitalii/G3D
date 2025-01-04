@@ -13,6 +13,13 @@
 #include <sstream>
 #include <vector>
 
+struct BoundingSphere
+{
+	glm::vec3 center;
+	float radius;
+
+};
+
 
 // SETTINGS (As a upgrade we could store them in a file and set up before app launch)
 
