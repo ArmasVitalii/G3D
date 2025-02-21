@@ -1,0 +1,86 @@
+﻿  Mesh.cpp
+  Model.cpp
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15): warning C4244: '=': conversion from 'double' to 'TReal', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15): warning C4244:         with
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15): warning C4244:         [
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15): warning C4244:             TReal=float
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15): warning C4244:         ]
+  (compiling source file 'Model.cpp')
+      D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15):
+      the template instantiation context (the oldest one first) is
+          D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\anim.h(107,24):
+          see reference to class template instantiation 'aiQuaterniont<float>' being compiled
+          D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(186,1):
+          while compiling class template member function 'void aiQuaterniont<float>::Interpolate(aiQuaterniont<float> &,const aiQuaterniont<float> &,const aiQuaterniont<float> &,TReal)'
+          with
+          [
+              TReal=float
+          ]
+              D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\anim.h(435,28):
+              see the first reference to 'aiQuaterniont<float>::Interpolate' in 'Assimp::Interpolator<aiQuaternion>::operator ()'
+  
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(208,14): warning C4244: '=': conversion from 'double' to 'TReal', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(208,14): warning C4244:         with
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(208,14): warning C4244:         [
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(208,14): warning C4244:             TReal=float
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(208,14): warning C4244:         ]
+  (compiling source file 'Model.cpp')
+  
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(209,61): warning C4244: '=': conversion from 'double' to 'TReal', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(209,61): warning C4244:         with
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(209,61): warning C4244:         [
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(209,61): warning C4244:             TReal=float
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(209,61): warning C4244:         ]
+  (compiling source file 'Model.cpp')
+  
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(210,33): warning C4244: '=': conversion from 'double' to 'TReal', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(210,33): warning C4244:         with
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(210,33): warning C4244:         [
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(210,33): warning C4244:             TReal=float
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(210,33): warning C4244:         ]
+  (compiling source file 'Model.cpp')
+  
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(93,13): warning C4244: 'return': conversion from 'double' to 'TReal', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(93,13): warning C4244:         with
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(93,13): warning C4244:         [
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(93,13): warning C4244:             TReal=float
+D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(93,13): warning C4244:         ]
+  (compiling source file 'Model.cpp')
+      D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(93,13):
+      the template instantiation context (the oldest one first) is
+          D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\types.h(150,22):
+          see reference to class template instantiation 'aiVector3t<float>' being compiled
+          D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(142,91):
+          while compiling class template member function 'bool aiVector3t<float>::operator ==(const aiVector3t<float> &) const'
+              D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\anim.h(82,3):
+              see the first reference to 'aiVector3t<float>::operator ==' in 'aiVectorKey::operator =='
+          D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(92,57):
+          while compiling class template member function 'TReal aiVector3t<TReal>::Length(void) const'
+          with
+          [
+              TReal=float
+          ]
+              D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(98,8):
+              see the first reference to 'aiVector3t<float>::Length' in 'aiVector3t<float>::Normalize'
+              D:\PlaneSimulator\PlaneSimulator\packages\Assimp.3.0.0\build\native\include\assimp\camera.h(191,50):
+              see the first reference to 'aiVector3t<float>::Normalize' in 'aiCamera::GetCameraMatrix'
+  
+  PlaneSimulator.cpp
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(667,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(683,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(995,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(997,26): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1017,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1095,106): warning C4305: 'argument': truncation from 'double' to 'T'
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1095,106): warning C4305:         with
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1095,106): warning C4305:         [
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1095,106): warning C4305:             T=float
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1095,106): warning C4305:         ]
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1104,36): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1104,36): warning C4244:         with
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1104,36): warning C4244:         [
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1104,36): warning C4244:             T=float
+D:\PlaneSimulator\PlaneSimulator\PlaneSimulator\PlaneSimulator.cpp(1104,36): warning C4244:         ]
+  Shader.cpp
+  Generating Code...
+  PlaneSimulator.vcxproj -> D:\PlaneSimulator\PlaneSimulator\x64\Debug\PlaneSimulator.exe
